@@ -13,20 +13,20 @@ const Navbar = () => {
         <p>Freshmart</p>
       </div>
       <div className="nav-menu">
-        <li onClick={() => setMenu("shop")}>
-          <Link to="/">Shop</Link>
+        <li onClick={() => setMenu("Home")}>
+          <Link to="/">Home</Link>
           {menu === "shop" && <hr />}
         </li>
-        <li onClick={() => setMenu("vegetables")}>
-          <Link to="/vegetables">Vegetables</Link>
+        <li onClick={() => setMenu("Raw materials")}>
+          <Link to="/vegetables">Raw Materials</Link>
           {menu === "vegetables" && <hr />}
         </li>
-        <li onClick={() => setMenu("fruits")}>
-          <Link to="/fruits">Fruits</Link>
+        <li onClick={() => setMenu("Machines")}>
+          <Link to="/fruits">Machines</Link>
           {menu === "fruits" && <hr />}
         </li>
-        <li onClick={() => setMenu("dryfruits")}>
-          <Link to="/dryfruits">Dry Fruits</Link>
+        <li onClick={() => setMenu("Manufacturing Macines")}>
+          <Link to="/dryfruits">Manufacturing Machines</Link>
           {menu === "dryfruits" && <hr />}
         </li>
       </div>
@@ -39,7 +39,7 @@ const Navbar = () => {
         ) : (
           <Link to="/login"><button>Login</button></Link>
         )}
-          <Link to="/cart"><button>Cart</button></Link>
+          <Link to="/Product"><button>Cart</button></Link>
       </div>
     </div>
   );

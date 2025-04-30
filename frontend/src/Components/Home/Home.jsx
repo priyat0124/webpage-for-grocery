@@ -13,10 +13,10 @@ const Hero = () => {
   const navigate = useNavigate(); 
 
   const weightOptions = [
-    { label: '250 g', value: 0.25 },
-    { label: '500 g', value: 0.5 },
-    { label: '1 kg', value: 1 },
-    { label: '2 kg', value: 2 }
+    { label: '250 ton', value: 0.25 },
+    { label: '500 ton', value: 0.5 },
+    { label: '1 ton', value: 1 },
+    { label: '2 ton', value: 2 }
   ];
 
   useEffect(() => {
