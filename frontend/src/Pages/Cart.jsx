@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Shopcontext } from '../Context/Shopcontext';
 import './CSS/Cart.css';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 const CartPage = () => {
   const {
@@ -49,13 +51,26 @@ const CartPage = () => {
     return cart.reduce((acc, item) => acc + calculatePrice(item), 0).toFixed(2);
   };
 
+  const handleDownload = () => {
+    const cartElement = document.querySelector('.cart-page');
+    html2canvas(cartElement).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('cart.pdf');
+    });
+  };
+
   return (
     <div className="cart-page">
       <h1>Your Cart</h1>
       {cart.length === 0 ? (
-       <div className="empty-cart-message">
-       <p>The Cart is empty</p>
-     </div>     
+        <div className="empty-cart-message">
+          <p>The Cart is empty</p>
+        </div>
       ) : (
         <>
           <ul className="cart-pages">
@@ -107,6 +122,7 @@ const CartPage = () => {
                 </div>
               </div>
               <button>PROCEED TO CHECKOUT</button>
+              <button onClick={handleDownload}>Download Cart as PDF</button>
             </div>
           </div>
         </>
