@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-# farmingwebsite
- 
-=======
-Grocery Mangement System
-This is used for user can easyly buy a product in our website.
-//Admin Pannel
-//Backend
-//Frontend
->>>>>>> a44f19e8615f1041927c2a0e8637fcf267634e24
+✅ Grocery Management System (Full-Stack Project)
+
+Developed a full-stack Grocery Management System that enables users to browse products, manage orders, and perform secure transactions. The application provides a user-friendly interface with smooth navigation, ensuring an efficient shopping experience. This project enhanced my skills in full-stack development, database management, and secure web application design.
